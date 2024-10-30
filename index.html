@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Livraisons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Suivi des Livraisons</h1>
+        <form id="deliveryForm">
+            <div class="form-group">
+                <label for="customerName">Nom du Client :</label>
+                <input type="text" id="customerName" required>
+            </div>
+            <div class="form-group">
+                <label for="customerPhone">Numéro de Client :</label>
+                <input type="text" id="customerPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="deliveryAddress">Adresse de Livraison :</label>
+                <input type="text" id="deliveryAddress" required>
+            </div>
+            <div class="form-group">
+                <label for="deliveryZone">Zone de Livraison :</label>
+                <select id="deliveryZone" required>
+                    <option value="zone1">Zone 1</option>
+                    <option value="zone2">Zone 2</option>
+                    <option value="zone3">Zone 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="foodAmount">Montant de la Nourriture :</label>
+                <input type="number" id="foodAmount" required>
+            </div>
+            <div class="form-group">
+                <label for="foodPaymentMethod">Mode de Paiement de la Nourriture :</label>
+                <select id="foodPaymentMethod" required>
+                    <option value="izoua">OM ou Wave chez Izoua</option>
+                    <option value="especes">Espèces</option>
+                    <option value="moi">Wave ou OM chez Moi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Frais de Livraison : <span id="deliveryFee">0 FCFA</span></label>
+            </div>
+            <button type="submit">Ajouter Livraison</button>
+        </form>
+
+        <table id="deliveriesTable">
+            <thead>
+                <tr>
+                    <th>Nom Client</th>
+                    <th>Téléphone Client</th>
+                    <th>Adresse</th>
+                    <th>Zone</th>
+                    <th>Statut</th>
+                    <th>Mode de Paiement Livraison</th>
+                    <th>Frais de Livraison</th>
+                    <th>Montant Nourriture</th>
+                    <th>Mode de Paiement Nourriture</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="summary">
+            <h3>Bilan Journalier des Livraisons</h3>
+            <h4>Montant des livraisons par mode de paiement :</h4>
+            <ul>
+                <li>OM ou Wave chez Izoua : <span id="izouaDeliveryTotal">0</span> FCFA</li>
+                <li>Espèces : <span id="cashDeliveryTotal">0</span> FCFA</li>
+                <li>Wave ou OM chez Moi : <span id="moiDeliveryTotal">0</span> FCFA</li>
+            </ul>
+            <h4>Montant des Nourritures par mode de paiement :</h4>
+            <ul>
+                <li>OM ou Wave chez Izoua : <span id="izouaFoodTotal">0</span> FCFA</li>
+                <li>Espèces : <span id="cashFoodTotal">0</span> FCFA</li>
+                <li>Wave ou OM chez Moi : <span id="moiFoodTotal">0</span> FCFA</li>
+            </ul>
+            <h4>Solde Total : <span id="balance">0</span> FCFA</h4>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
